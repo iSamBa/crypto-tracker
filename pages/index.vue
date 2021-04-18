@@ -1,5 +1,7 @@
 <template>
-  <div class="container-fluid">Hello</div>
+  <div class="container-fluid">
+    <hero-item></hero-item>
+  </div>
 </template>
 
 <script>
