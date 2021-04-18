@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbarlight box-inner">
     <nuxt-link to="/" exact>
-      <span class="logo">MyLogo</span>
+      <img class="logo" src="~/static/logo/logo.png" alt="logo" />
     </nuxt-link>
     <button
       class="navbar-toggler collapsed"
@@ -20,6 +20,7 @@
     <div id="navbarsExampleDefault" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <nav-link link="index">Home</nav-link>
+        <nav-link link="index">Track</nav-link>
         <nav-link link="about">About</nav-link>
       </ul>
     </div>

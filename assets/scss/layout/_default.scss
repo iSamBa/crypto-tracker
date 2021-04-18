@@ -4,3 +4,20 @@
       margin-inline: $spacer * 1.5 ;
    }
 }
+a {
+   color: $primary;
+   text-decoration: none;
+   transition : all .2s ease;
+   
+   &:hover {
+      transform: scale(1.05);
+      color: $secondary;
+   }
+
+   @include media-breakpoint-down(md){
+       &:hover {
+      transform: scale(1.01);
+      color: $secondary;
+   }
+   }
+}
