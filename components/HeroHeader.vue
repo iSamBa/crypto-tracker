@@ -1,9 +1,9 @@
 <template>
-  <div class="box-inner hero">
+  <div class="hero">
     <div class="information">
       <h1>Tracking your favourite cryptocurrency is one click away</h1>
       <p>Search & Track your cryptocurrencies</p>
-      <button>Start Now</button>
+      <button class="btn btn-lg btn-primary">Start Now</button>
     </div>
     <div class="illustration">
       <img
@@ -17,7 +17,7 @@
 
 <script>
 export default {
-  name: 'HeroItem',
+  name: 'HeroHeader',
 }
 </script>
 

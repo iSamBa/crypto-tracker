@@ -1,6 +1,6 @@
 <template>
-  <div class="container-fluid">
-    <hero-item></hero-item>
+  <div class="box-inner">
+    <hero-header></hero-header>
   </div>
 </template>
 

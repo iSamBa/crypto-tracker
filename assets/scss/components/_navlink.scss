@@ -1,7 +1,26 @@
 .nav-item {
   .nav-link {
     color: $primary;
-    
+    margin-left: $horizontal-spacer;
+    font-size: 14px;
   }
 
+}
+nuxt-item {
+   color: $primary;
+   text-decoration: none;
+   font-weight: semi-bold;
+   transition : all .2s ease;
+   
+   &:hover {
+      transform: scale(1.05);
+      color: $secondary;
+   }
+
+   @include media-breakpoint-down(md){
+       &:hover {
+      transform: scale(1.01);
+      color: $secondary;
+   }
+   }
 }

@@ -3,10 +3,26 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
 
   .illustration-img {
     border-radius: 50%;
+    width: 596px;
+    height: 596px;
+  }
+
+  .information {
+    width: 514px;
+    height: 245px;
+    h1, p {
+      margin-bottom: $vertical-spacer;
+    }
+    h1 {
+      font-size: 36px;
+      line-height: 44px;
+      font-weight: 600;
+    }
+ 
   }
 
 }

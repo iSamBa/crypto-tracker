@@ -10,25 +10,8 @@
    font-family: $font-base;
 }
 .box-inner {
-   margin-inline: $spacer * 2;
+   margin-inline: $horizontal-spacer * 2;
    @include media-breakpoint-down(md){
-      margin-inline: $spacer * 1.5 ;
-   }
-}
-a {
-   color: $primary;
-   text-decoration: none;
-   transition : all .2s ease;
-   
-   &:hover {
-      transform: scale(1.05);
-      color: $secondary;
-   }
-
-   @include media-breakpoint-down(md){
-       &:hover {
-      transform: scale(1.01);
-      color: $secondary;
-   }
+      margin-inline: $horizontal-spacer * 1.5 ;
    }
 }
