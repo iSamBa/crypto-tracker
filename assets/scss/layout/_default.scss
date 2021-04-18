@@ -1,3 +1,6 @@
-html {
-   background-color: $bg; 
+.box-inner {
+   margin-inline: $spacer * 2;
+   @include media-breakpoint-down(md){
+      margin-inline: $spacer * 1.5 ;
+   }
 }
