@@ -6,21 +6,23 @@
   }
 
 }
-nuxt-item {
+.nav-link {
    color: $primary;
    text-decoration: none;
    font-weight: semi-bold;
    transition : all .2s ease;
    
    &:hover {
-      transform: scale(1.05);
+      transform: scale(1.06);
       color: $secondary;
-   }
-
-   @include media-breakpoint-down(md){
-       &:hover {
-      transform: scale(1.01);
-      color: $secondary;
-   }
+      font-weight: bold;
+    }
+    
+    @include media-breakpoint-down(md){
+      &:hover {
+        transform: scale(1.01);
+        color: $secondary;
+        font-weight: bold;
+      }
    }
 }
