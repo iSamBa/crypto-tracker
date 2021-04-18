@@ -56,7 +56,12 @@
 }
 
 .logo {
-    width: 179px;
+    max-width: 179px;
+    min-width: 100px;
+    width: 100%;
+    @include media-breakpoint-down(md){
+        width: 75%;
+    }
 }
 
 

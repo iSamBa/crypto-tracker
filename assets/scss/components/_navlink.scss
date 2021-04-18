@@ -3,7 +3,12 @@
     color: $primary;
     margin-left: $horizontal-spacer;
     font-size: 14px;
+    
+    @include media-breakpoint-down(md){
+      margin-left: 0;
+    }
   }
+
 
 }
 .nav-link {

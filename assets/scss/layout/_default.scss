@@ -12,6 +12,9 @@
 .box-inner {
    margin-inline: $horizontal-spacer * 2;
    @include media-breakpoint-down(md){
-      margin-inline: $horizontal-spacer * 1.5 ;
+      margin-inline: $horizontal-spacer * 0.5 ;
+   }
+   @include media-breakpoint-down(sm){
+      margin-inline: $horizontal-spacer * 0.2 ;
    }
 }

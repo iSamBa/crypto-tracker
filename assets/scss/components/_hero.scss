@@ -5,15 +5,26 @@
   align-items: center;
   justify-content: space-between;
 
+  @include media-breakpoint-down(sm){
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
   .illustration-img {
     border-radius: 50%;
-    width: 596px;
-    height: 596px;
+    max-width: 596px;
+    width: 100%;
+    
+    @include media-breakpoint-down(sm){
+      border-radius: 0%;
+    }
   }
 
   .information {
-    width: 514px;
-    height: 245px;
+    max-width: 514px;
+    max-height: 245px;
+    width: 100%;
     h1, p {
       margin-bottom: $vertical-spacer;
     }
