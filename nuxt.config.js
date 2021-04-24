@@ -49,7 +49,9 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    baseURL: 'https://api.coingecko.com/api/v3',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

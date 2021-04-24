@@ -9,7 +9,6 @@
     }
   }
 
-
 }
 .nav-link {
    color: $primary;
@@ -20,7 +19,6 @@
    &:hover {
       transform: scale(1.06);
       color: $secondary;
-      font-weight: bold;
     }
     
     @include media-breakpoint-down(md){

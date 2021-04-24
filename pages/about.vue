@@ -1,5 +1,5 @@
 <template>
-  <div>About Page</div>
+  <div class="box-inner">About Page</div>
 </template>
 
 <script>
