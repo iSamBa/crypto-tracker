@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <global-currency-data></global-currency-data>
-  </div>
+  <global-currency-data></global-currency-data>
 </template>
 
 <script>
@@ -10,3 +8,4 @@ export default {
   components: { GlobalCurrencyData },
 }
 </script>
+<style lang="scss" scoped></style>
