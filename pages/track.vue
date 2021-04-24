@@ -1,9 +1,6 @@
 <template>
   <div class="box-inner">
-    Track | coins
-    <div v-for="coin in coins" :key="coin.id">
-      <span>{{ coin.name }}</span>
-    </div>
+    <dashboard-item></dashboard-item>
   </div>
 </template>
 
