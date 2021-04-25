@@ -14,4 +14,15 @@
   align-items: center;
   justify-content: flex-start;
   text-align: center;
+
+  .market-capacity {
+    display: flex;
+    .market-capacity-item{
+      margin-inline: 12px;
+    }    
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
 }
