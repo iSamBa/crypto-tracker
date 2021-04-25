@@ -2,13 +2,16 @@
   <div class="global-market">
     <div class="total global-market-item">
       <h4 class="title">TOTAL MARKET VOLUME</h4>
-      <span v-if="globalData.total_volume">{{
-        globalData.total_volume.eur
-      }}</span>
+      <div v-if="globalData.total_volume" class="content">
+        <p>
+          {{ globalData.total_volume.eur }}
+          <span> €</span>
+        </p>
+      </div>
     </div>
     <div class="capacity global-market-item">
       <h4 class="title">MARKET CAPACITY</h4>
-      <div v-if="marketCapacityPercentage" class="market-capacity">
+      <div v-if="marketCapacityPercentage" class="content market-capacity">
         <div class="market-capacity-item">
           <p>BTC</p>
           <p>{{ marketCapacityPercentageBtc }} <span>%</span></p>
@@ -25,9 +28,11 @@
     </div>
     <div class="active-currencies global-market-item">
       <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
-      <span v-if="globalData.active_cryptocurrencies">{{
-        globalData.active_cryptocurrencies
-      }}</span>
+      <div v-if="globalData.active_cryptocurrencies" class="content">
+        <p>
+          {{ globalData.active_cryptocurrencies }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
