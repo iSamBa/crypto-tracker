@@ -1,11 +1,11 @@
 <template>
-  <global-currency-data></global-currency-data>
+  <div>
+    <global-currency-data></global-currency-data>
+    <line-chart :data="{ '2017-05-13': 2, '2017-05-14': 5 }"></line-chart>
+  </div>
 </template>
 
 <script>
-import GlobalCurrencyData from './GlobalCurrencyData.vue'
-export default {
-  components: { GlobalCurrencyData },
-}
+export default {}
 </script>
 <style lang="scss" scoped></style>
