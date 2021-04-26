@@ -7,6 +7,10 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+
+  @include media-breakpoint-down(md){
+    grid-template-columns:  1fr;
+  }
 }
 .global-market-item{
   text-align: center;
@@ -16,17 +20,13 @@
 
   .content {
     margin-top: 10px;
-  
-  }
-  .market-capacity {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    .market-capacity-item{
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-    }    
+    font-weight: 500 ;
+    p {
+      font-size: 1.5rem;
+    }
+    span {
+      font-size: small;
+    }
   }
 
   .title {

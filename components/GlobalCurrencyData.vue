@@ -10,20 +10,9 @@
       </div>
     </div>
     <div class="capacity global-market-item">
-      <h4 class="title">MARKET CAPACITY</h4>
-      <div v-if="marketCapacityPercentage" class="content market-capacity">
-        <div class="market-capacity-item">
-          <p>BTC</p>
-          <p>{{ marketCapacityPercentageBtc }} <span>%</span></p>
-        </div>
-        <div class="market-capacity-item">
-          <p>ETH</p>
-          <p>{{ marketCapacityPercentageEth }} <span>%</span></p>
-        </div>
-        <div class="market-capacity-item">
-          <p>BNB</p>
-          <p>{{ marketCapacityPercentageBnb }} <span>%</span></p>
-        </div>
+      <h4 class="title">MARKETS</h4>
+      <div v-if="markets" class="content">
+        <p>{{ markets }} <span></span></p>
       </div>
     </div>
     <div class="active-currencies global-market-item">
@@ -38,22 +27,14 @@
 </template>
 
 <script>
+// @ts-nocheck
 export default {
   computed: {
     globalData() {
       return this.$store.state.globalMarketData
     },
-    marketCapacityPercentage() {
-      return this.globalData.market_cap_percentage
-    },
-    marketCapacityPercentageBtc() {
-      return this.globalData.market_cap_percentage.btc.toFixed(2)
-    },
-    marketCapacityPercentageEth() {
-      return this.globalData.market_cap_percentage.eth.toFixed(2)
-    },
-    marketCapacityPercentageBnb() {
-      return this.globalData.market_cap_percentage.bnb.toFixed(2)
+    markets() {
+      return this.globalData.markets
     },
   },
   async mounted() {
