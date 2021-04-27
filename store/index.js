@@ -36,7 +36,7 @@ export const actions = {
 // mutations
 export const mutations = {
   ADD_COINS(state, payload) {
-    state.coins = payload
+    state.coins.data = payload
   },
 
   SET_LOADING_COINS(state) {
@@ -48,7 +48,7 @@ export const mutations = {
   },
 
   UPDATE_GLOBAL_MARKET_DATA(state, payload) {
-    state.globalMarketData = payload
+    state.globalMarketData.data = payload
   },
 
   SET_LOADING_GLOBAL_MARKET_DATA(state) {

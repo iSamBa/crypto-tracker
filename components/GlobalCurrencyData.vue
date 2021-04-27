@@ -1,6 +1,7 @@
 <template>
   <div class="global-market">
-    <div class="total global-market-item">
+    {{ globalMarketData.data }}
+    <!--<div class="total global-market-item">
       <h4 class="title">TOTAL MARKET VOLUME</h4>
       <div v-if="globalData.total_volume" class="content">
         <p>
@@ -22,24 +23,29 @@
           {{ globalData.active_cryptocurrencies }}
         </p>
       </div>
-    </div>
+    </div>-->
   </div>
 </template>
 
 <script>
-// @ts-nocheck
+import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
-    globalData() {
-      return this.$store.state.globalMarketData
-    },
-    markets() {
-      return this.globalData.markets
-    },
+    //  globalData() {
+    //    return this.$store.state.globalMarketData
+    //  },
+    //  markets() {
+    //    return this.globalData.markets
+    //  },
+    ...mapState(['globalMarketData']),
   },
-  async mounted() {
-    const data = await this.$store.dispatch('getGlobalMarketData')
-    this.$store.commit('updateGlobalMarketData', data.data.data)
+  mounted() {
+    this.getGlobalMarketData()
+    // const data = await this.$store.dispatch('getGlobalMarketData')
+    // this.$store.commit('updateGlobalMarketData', data.data.data)
+  },
+  methods: {
+    ...mapActions(['getGlobalMarketData']),
   },
 }
 </script>
