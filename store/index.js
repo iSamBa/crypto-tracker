@@ -28,7 +28,7 @@ export const actions = {
   async getCoin(context, id) {
     context.commit('SET_LOADING_SELECTED_COIN')
     const coin = await this.$axios.get(`/coins/${id}`)
-    context.commit('SET_SELECTED_COIN', coin)
+    context.commit('SET_SELECTED_COIN', coin.data)
     context.commit('SET_LOADING_SELECTED_COIN')
   },
   async getGlobalMarketData(context) {

@@ -45,7 +45,7 @@
         :round="2"
         :zeros="true"
         :points="false"
-        :title="selectedCoin.coin.id"
+        :title="selectedCoin.coin.localization.en"
       ></line-chart>
     </div>
   </div>
@@ -65,12 +65,13 @@ export default {
   },
   mounted() {
     this.getGlobalMarketData()
+    this.getCoin('bitcoin')
     this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 2000 })
     // const data = await this.$store.dispatch('getGlobalMarketData')
     // this.$store.commit('updateGlobalMarketData', data.data.data)
   },
   methods: {
-    ...mapActions(['getGlobalMarketData', 'getCoinPrices']),
+    ...mapActions(['getGlobalMarketData', 'getCoinPrices', 'getCoin']),
   },
 }
 </script>
