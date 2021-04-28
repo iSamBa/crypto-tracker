@@ -35,6 +35,7 @@
         </div>
       </div>
     </template>
+    <line-chart :data="selectedCoin.prices"></line-chart>
   </div>
 </template>
 
@@ -48,15 +49,16 @@ export default {
     //  markets() {
     //    return this.globalData.markets
     //  },
-    ...mapState(['globalMarketData']),
+    ...mapState(['globalMarketData', 'selectedCoin']),
   },
   mounted() {
     this.getGlobalMarketData()
+    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 1000 })
     // const data = await this.$store.dispatch('getGlobalMarketData')
     // this.$store.commit('updateGlobalMarketData', data.data.data)
   },
   methods: {
-    ...mapActions(['getGlobalMarketData']),
+    ...mapActions(['getGlobalMarketData', 'getCoinPrices']),
   },
 }
 </script>
