@@ -35,7 +35,13 @@
         </div>
       </div>
     </template>
-    <line-chart :data="selectedCoin.prices"></line-chart>
+    <line-chart
+      :data="selectedCoin.prices"
+      prefix="€"
+      width="max"
+      :round="2"
+      :zeros="true"
+    ></line-chart>
   </div>
 </template>
 
@@ -53,7 +59,7 @@ export default {
   },
   mounted() {
     this.getGlobalMarketData()
-    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 1000 })
+    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 2000 })
     // const data = await this.$store.dispatch('getGlobalMarketData')
     // this.$store.commit('updateGlobalMarketData', data.data.data)
   },

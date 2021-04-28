@@ -42,7 +42,12 @@ export const actions = {
     const prices = await this.$axios.get(
       `/coins/${params.id}/market_chart?vs_currency=${params.currency}&days=${params.duration}`
     )
-    context.commit('SET_PRICES_SELECTED_COIN', prices.data.prices)
+    context.commit(
+      'SET_PRICES_SELECTED_COIN',
+      prices.data.prices.map((dataset) => {
+        return [new Date(dataset[0]), dataset[1]]
+      })
+    )
     context.commit('SET_LOADING_SELECTED_COIN')
   },
 }
