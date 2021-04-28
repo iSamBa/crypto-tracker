@@ -12,6 +12,14 @@
     grid-template-columns:  1fr;
   }
 }
+.chart-market {
+  margin-top: 16px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 20px;
+  padding : 16px;
+}
 .global-market-item{
   text-align: center;
   display: grid;

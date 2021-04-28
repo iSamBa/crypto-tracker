@@ -1,47 +1,53 @@
 <template>
-  <div class="global-market">
-    <template v-if="globalMarketData.isLoading">Loading...</template>
-    <template v-else>
-      <div
-        v-if="globalMarketData.data.total_volume"
-        class="total global-market-item"
-      >
-        <h4 class="title">TOTAL MARKET VOLUME</h4>
-        <div class="content">
-          <p>
-            {{ globalMarketData.data.total_volume.eur }}
-            <span> €</span>
-          </p>
+  <div>
+    <div class="global-market">
+      <template v-if="globalMarketData.isLoading">Loading...</template>
+      <template v-else>
+        <div
+          v-if="globalMarketData.data.total_volume"
+          class="total global-market-item"
+        >
+          <h4 class="title">TOTAL MARKET VOLUME</h4>
+          <div class="content">
+            <p>
+              {{ globalMarketData.data.total_volume.eur }}
+              <span> €</span>
+            </p>
+          </div>
         </div>
-      </div>
-      <div
-        v-if="globalMarketData.data.markets"
-        class="capacity global-market-item"
-      >
-        <h4 class="title">MARKETS</h4>
-        <div class="content">
-          <p>{{ globalMarketData.data.markets }} <span></span></p>
+        <div
+          v-if="globalMarketData.data.markets"
+          class="capacity global-market-item"
+        >
+          <h4 class="title">MARKETS</h4>
+          <div class="content">
+            <p>{{ globalMarketData.data.markets }} <span></span></p>
+          </div>
         </div>
-      </div>
-      <div
-        v-if="globalMarketData.data.active_cryptocurrencies"
-        class="active-currencies global-market-item"
-      >
-        <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
-        <div class="content">
-          <p>
-            {{ globalMarketData.data.active_cryptocurrencies }}
-          </p>
+        <div
+          v-if="globalMarketData.data.active_cryptocurrencies"
+          class="active-currencies global-market-item"
+        >
+          <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
+          <div class="content">
+            <p>
+              {{ globalMarketData.data.active_cryptocurrencies }}
+            </p>
+          </div>
         </div>
-      </div>
-    </template>
-    <line-chart
-      :data="selectedCoin.prices"
-      prefix="€"
-      width="max"
-      :round="2"
-      :zeros="true"
-    ></line-chart>
+      </template>
+    </div>
+    <div class="chart-market">
+      <line-chart
+        :data="selectedCoin.prices"
+        prefix="€"
+        :download="true"
+        :round="2"
+        :zeros="true"
+        :points="false"
+        :title="selectedCoin.coin.id"
+      ></line-chart>
+    </div>
   </div>
 </template>
 
