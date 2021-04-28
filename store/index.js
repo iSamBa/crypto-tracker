@@ -28,7 +28,7 @@ export const actions = {
   async getGlobalMarketData(context) {
     context.commit('SET_LOADING_GLOBAL_MARKET_DATA')
     const globalMarketData = await this.$axios.get('/global')
-    context.commit('UPDATE_GLOBAL_MARKET_DATA', globalMarketData)
+    context.commit('UPDATE_GLOBAL_MARKET_DATA', globalMarketData.data.data)
     context.commit('SET_LOADING_GLOBAL_MARKET_DATA')
   },
 }
@@ -40,7 +40,8 @@ export const mutations = {
   },
 
   SET_LOADING_COINS(state) {
-    state.coins.isLoading = !state.coins.isLoading
+    const value = state.coins.isLoading
+    state.coins.isLoading = !value
   },
 
   SET_SELECTED_COIN(state, payload) {
@@ -52,6 +53,7 @@ export const mutations = {
   },
 
   SET_LOADING_GLOBAL_MARKET_DATA(state) {
-    state.globalMarketData.isLoading = !state.globalMarketData.isLoading
+    const value = state.globalMarketData.isLoading
+    state.globalMarketData.isLoading = !value
   },
 }

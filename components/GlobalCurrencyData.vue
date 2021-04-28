@@ -1,29 +1,40 @@
 <template>
   <div class="global-market">
-    {{ globalMarketData.data }}
-    <!--<div class="total global-market-item">
-      <h4 class="title">TOTAL MARKET VOLUME</h4>
-      <div v-if="globalData.total_volume" class="content">
-        <p>
-          {{ globalData.total_volume.eur }}
-          <span> €</span>
-        </p>
+    <template v-if="globalMarketData.isLoading">Loading...</template>
+    <template v-else>
+      <div
+        v-if="globalMarketData.data.total_volume"
+        class="total global-market-item"
+      >
+        <h4 class="title">TOTAL MARKET VOLUME</h4>
+        <div class="content">
+          <p>
+            {{ globalMarketData.data.total_volume.eur }}
+            <span> €</span>
+          </p>
+        </div>
       </div>
-    </div>
-    <div class="capacity global-market-item">
-      <h4 class="title">MARKETS</h4>
-      <div v-if="markets" class="content">
-        <p>{{ markets }} <span></span></p>
+      <div
+        v-if="globalMarketData.data.markets"
+        class="capacity global-market-item"
+      >
+        <h4 class="title">MARKETS</h4>
+        <div class="content">
+          <p>{{ globalMarketData.data.markets }} <span></span></p>
+        </div>
       </div>
-    </div>
-    <div class="active-currencies global-market-item">
-      <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
-      <div v-if="globalData.active_cryptocurrencies" class="content">
-        <p>
-          {{ globalData.active_cryptocurrencies }}
-        </p>
+      <div
+        v-if="globalMarketData.data.active_cryptocurrencies"
+        class="active-currencies global-market-item"
+      >
+        <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
+        <div class="content">
+          <p>
+            {{ globalMarketData.data.active_cryptocurrencies }}
+          </p>
+        </div>
       </div>
-    </div>-->
+    </template>
   </div>
 </template>
 
