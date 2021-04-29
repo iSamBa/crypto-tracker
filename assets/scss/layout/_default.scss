@@ -3,11 +3,19 @@
    padding: 0;
    box-sizing: border-box;
 }
+#__nuxt  {
+   height: 100vh;
+   width: 100vw;
+}
+#__layout {
+   height: 100%;
+   width: 100%;
+}
 .main {
    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%), #FFFFFF;
-   width: 100vw;
-   height: 100vh;
    font-family: $font-base;
+   height: 100%;
+   width: 100%;
 }
 .box-inner {
    margin-inline: $horizontal-spacer * 2;

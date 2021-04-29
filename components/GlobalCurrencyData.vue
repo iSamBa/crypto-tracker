@@ -39,6 +39,7 @@
     </div>
     <div class="chart-market">
       <line-chart
+        v-if="selectedCoin.coin.localization"
         :data="selectedCoin.prices"
         prefix="€"
         :download="true"
