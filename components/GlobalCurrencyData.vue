@@ -61,7 +61,7 @@ export default {
   mounted() {
     this.getGlobalMarketData()
     this.getCoin('bitcoin')
-    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 2000 })
+    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 4000 })
   },
   methods: {
     ...mapActions(['getGlobalMarketData', 'getCoinPrices', 'getCoin']),
