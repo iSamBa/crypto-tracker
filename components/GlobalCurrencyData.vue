@@ -56,20 +56,12 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
-    //  globalData() {
-    //    return this.$store.state.globalMarketData
-    //  },
-    //  markets() {
-    //    return this.globalData.markets
-    //  },
     ...mapState(['globalMarketData', 'selectedCoin']),
   },
   mounted() {
     this.getGlobalMarketData()
     this.getCoin('bitcoin')
     this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 2000 })
-    // const data = await this.$store.dispatch('getGlobalMarketData')
-    // this.$store.commit('updateGlobalMarketData', data.data.data)
   },
   methods: {
     ...mapActions(['getGlobalMarketData', 'getCoinPrices', 'getCoin']),
