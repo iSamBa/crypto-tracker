@@ -49,18 +49,6 @@
         </div>
       </template>
     </div>
-    <div class="chart-market">
-      <line-chart
-        v-if="selectedCoin.coin.localization"
-        :data="selectedCoin.prices"
-        prefix="€"
-        :download="true"
-        :round="2"
-        :zeros="true"
-        :points="false"
-        :title="selectedCoin.coin.localization.en"
-      ></line-chart>
-    </div>
   </div>
 </template>
 
@@ -68,15 +56,13 @@
 import { mapState, mapActions } from 'vuex'
 export default {
   computed: {
-    ...mapState(['globalMarketData', 'selectedCoin']),
+    ...mapState(['globalMarketData']),
   },
   mounted() {
     this.getGlobalMarketData()
-    this.getCoin('bitcoin')
-    this.getCoinPrices({ id: 'bitcoin', currency: 'eur', duration: 4000 })
   },
   methods: {
-    ...mapActions(['getGlobalMarketData', 'getCoinPrices', 'getCoin']),
+    ...mapActions(['getGlobalMarketData']),
   },
 }
 </script>

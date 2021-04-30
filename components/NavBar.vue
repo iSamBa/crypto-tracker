@@ -20,7 +20,6 @@
     <div id="navbarsExampleDefault" class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <nav-link link="index">Home</nav-link>
-        <nav-link link="track">Track</nav-link>
         <nav-link link="about">About</nav-link>
       </ul>
     </div>

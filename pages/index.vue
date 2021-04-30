@@ -1,6 +1,7 @@
 <template>
   <div class="box-inner">
-    <hero-header></hero-header>
+    <dashboard-item></dashboard-item>
+    <coin-list></coin-list>
   </div>
 </template>
 
