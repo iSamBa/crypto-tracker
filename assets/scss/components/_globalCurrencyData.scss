@@ -1,29 +1,18 @@
 .global-market {
-  width: 100%;
-  height: 100%;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 12px;
   padding : 32px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 
   @include media-breakpoint-down(md){
     grid-template-columns:  1fr;
   }
 }
-.chart-market {
-  margin-top: 16px;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: 20px;
-  padding : 16px;
-  
-}
 .global-market-item{
-  align-self: center;
-  justify-self: center;
+  align-self: stretch;
+  justify-self: stretch;
   display: flex;
   flex-direction: column;
   .content {
@@ -38,7 +27,6 @@
 
   .title {
     font-size: 0.8rem;
-    color: rgba($color: #000000, $alpha: .8);
     margin: 0;
   }
 }
