@@ -7,7 +7,7 @@
           v-if="globalMarketData.data.total_volume"
           class="total global-market-item"
         >
-          <h4 class="title">TOTAL MARKET VOLUME</h4>
+          <p class="title">TOTAL MARKET VOLUME</p>
           <div class="content">
             <p>
               {{ globalMarketData.data.total_volume.eur }}
@@ -16,10 +16,22 @@
           </div>
         </div>
         <div
+          v-if="globalMarketData.data.total_volume"
+          class="global-market-item"
+        >
+          <p class="title">TOTAL MARKET CAPACITY</p>
+          <div class="content">
+            <p>
+              {{ globalMarketData.data.total_market_cap.eur }}
+              <span> €</span>
+            </p>
+          </div>
+        </div>
+        <div
           v-if="globalMarketData.data.markets"
           class="capacity global-market-item"
         >
-          <h4 class="title">MARKETS</h4>
+          <p class="title">MARKETS</p>
           <div class="content">
             <p>{{ globalMarketData.data.markets }} <span></span></p>
           </div>
@@ -28,7 +40,7 @@
           v-if="globalMarketData.data.active_cryptocurrencies"
           class="active-currencies global-market-item"
         >
-          <h4 class="title">ACTIVE CRYPTOCURRENCIES</h4>
+          <p class="title">ACTIVE CRYPTOCURRENCIES</p>
           <div class="content">
             <p>
               {{ globalMarketData.data.active_cryptocurrencies }}

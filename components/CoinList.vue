@@ -37,6 +37,6 @@ export default {
   mounted() {
     this.getCoins()
   },
-  methods: { ...mapActions(['getCoins']) },
+  methods: { ...mapActions(['getCoins', 'getCoinPrices']) },
 }
 </script>
