@@ -1,5 +1,5 @@
 <template>
-  <div>{{ this.$route.params.id }}</div>
+  <div>{{ coin }}</div>
 </template>
 
 <script>
@@ -7,9 +7,13 @@ import { mapActions } from 'vuex'
 export default {
   data() {
     return {
-      coin: {},
+      coin: '',
     }
   },
+  async mounted() {
+    this.coin = await this.fetchCoinById(this.$route.params.id)
+  },
+  methods: { ...mapActions(['fetchCoinById', 'fetchCoinPrices']) },
 }
 </script>
 

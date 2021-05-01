@@ -37,8 +37,9 @@ export const actions = {
    * @returns specific coin data
    * @author iSamBa
    */
-  async fetchCoinById(id) {
-    return await this.$axios.get(`/coins/${id}`)
+  async fetchCoinById(context, id) {
+    const coin = await this.$axios.get(`/coins/${id}`)
+    return coin.data
   },
 
   /**
@@ -59,13 +60,14 @@ export const actions = {
    * @param {Object} params contain the coin id, the currency and the days
    * @author iSamBa
    */
-  async getCoinPrices(context, params) {
+  async fetchCoinPrices(context, params) {
     const prices = await this.$axios.get(
       `/coins/${params.id}/market_chart?vs_currency=${params.currency}&days=${params.duration}`
     )
-    return prices.data.prices.map((dataset) => {
+    const formattedPrices = prices.data.prices.map((dataset) => {
       return [new Date(dataset[0]), dataset[1]]
     })
+    return formattedPrices
   },
 }
 
