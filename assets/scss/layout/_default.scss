@@ -8,6 +8,14 @@
    min-height: 100vh;
 }
 
+a {
+   color: $primary;
+   &:hover {
+      text-decoration: none;
+      color: $primary;
+         }
+}
+
 .main {
    font-family: $font-base;
 }

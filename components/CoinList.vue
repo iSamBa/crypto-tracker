@@ -1,6 +1,11 @@
 <template>
   <div v-if="coins.data" class="coin-row">
-    <div v-for="coin in coins.data" :key="coin.id" class="coin-item">
+    <nuxt-link
+      v-for="coin in coins.data"
+      :key="coin.id"
+      :to="'/coins/' + coin.id"
+      class="coin-item"
+    >
       <img class="icon" :src="coin.image.thumb" :alt="coin.name" />
       <div class="name">
         <p>{{ coin.name }}</p>
@@ -26,7 +31,7 @@
           <span>%</span>
         </p>
       </div>
-    </div>
+    </nuxt-link>
   </div>
 </template>
 
