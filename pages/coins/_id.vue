@@ -3,7 +3,14 @@
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+export default {
+  data() {
+    return {
+      coin: {},
+    }
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>
