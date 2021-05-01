@@ -5,13 +5,14 @@
 }
 #__nuxt  {
    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%), #FFFFFF;
+   min-height: 100vh;
 }
 
 .main {
    font-family: $font-base;
 }
 .box-inner {
-   margin-inline: $horizontal-spacer * 2;
+   margin-inline: $horizontal-spacer * 1.5;
    @include media-breakpoint-down(md){
       margin-inline: $horizontal-spacer * 0.5 ;
    }
