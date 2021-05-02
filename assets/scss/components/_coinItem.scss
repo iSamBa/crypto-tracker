@@ -1,14 +1,24 @@
- .coin-item {
-  background-color: white;
-  border-radius: 10px;
-  padding: 10px;
-  margin: 10px 0;
-  display: grid;
-  grid-template-columns: .2fr 1fr 5fr;
-  grid-gap: 10px;
-  align-content: center;
+ .coin-row {
 
-  &:hover {
+  a {
+   color: $primary;
+   text-decoration: none;
+   &:hover {
+      color: $primary;
+         }
+  }
+
+   .coin-item {
+     background-color: white;
+     border-radius: 10px;
+     padding: 10px;
+     margin: 10px 0;
+     display: grid;
+     grid-template-columns: .2fr 1fr 5fr;
+     grid-gap: 10px;
+     align-content: center;
+
+     &:hover {
     background-color: rgba($color: #fff, $alpha: .5);
     cursor: pointer;
   }
@@ -23,7 +33,7 @@
     justify-self: start;
     p {
       margin: 0;
-    
+      
       &:nth-child(1){
         font-weight: 500;
       }
@@ -51,19 +61,24 @@
       font-size: .8rem;
     }
      p {
-      margin: 0;
-    
-      &:nth-child(1){
-        font-weight: 500;
-      }
-      &:nth-child(2){
-        font-weight: 500;
-        font-size: .8rem;
+       margin: 0;
+       
+       &:nth-child(1){
+         font-weight: 500;
+        }
+        &:nth-child(2){
+          font-weight: 500;
+          font-size: .8rem;
+        }
       }
     }
+    
   }
-
 }
 .graph {
-  margin-top: 24px;
+  margin-top: 40px;
+  .chartjs-render-monitor {
+    width: 100%;
+  }
 }
+  

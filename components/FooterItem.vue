@@ -1,5 +1,7 @@
 <template>
-  <div class="inner-box">Footer</div>
+  <div class="footer box-inner">
+    <p>Made with love</p>
+  </div>
 </template>
 
 <script>

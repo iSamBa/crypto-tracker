@@ -6,15 +6,10 @@
 #__nuxt  {
    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%), #FFFFFF;
    min-height: 100vh;
+   max-width: 100vw;
 }
 
-a {
-   color: $primary;
-   &:hover {
-      text-decoration: none;
-      color: $primary;
-         }
-}
+
 
 .main {
    font-family: $font-base;
