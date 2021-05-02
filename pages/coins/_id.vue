@@ -17,19 +17,7 @@
       v-html="coin.description.id"
     ></p>
     <div class="graph">
-      <line-chart
-        :data="prices"
-        :points="false"
-        prefix="€"
-        thousands=","
-        decimal="."
-        loading="Fetching data from the API ..."
-        empty="No available data"
-        :label="coin.name"
-        :round="4"
-        :zeros="true"
-        :dataset="{ borderWidth: 1 }"
-      ></line-chart>
+      <!-- TODO : Insert the graph here using vue-chartjs -->
     </div>
   </div>
   <div v-else>
