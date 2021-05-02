@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div v-if="globalMarketData.isLoading"></div>
+    <div v-if="globalMarketData.isLoading">
+      <loader-item
+        loading-msg="Fetching data from API"
+        illustration-color="#000"
+      ></loader-item>
+    </div>
     <div v-else class="global-market">
       <div v-if="globalMarketData.data.total_volume" class="global-market-item">
         <p class="title">TOTAL MARKET VOLUME</p>

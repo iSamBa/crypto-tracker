@@ -33,6 +33,12 @@
       </div>
     </nuxt-link>
   </div>
+  <div v-else>
+    <loader-item
+      loading-msg="Fetching data from API"
+      illustration-color="#000"
+    ></loader-item>
+  </div>
 </template>
 
 <script>

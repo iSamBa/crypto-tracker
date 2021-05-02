@@ -1,5 +1,5 @@
 <template>
-  <div class="box-inner">
+  <div v-if="coin && prices" class="box-inner">
     <div v-if="coin" class="heading">
       <img class="symbol" :src="coin.image.small" :alt="coin.title" />
       <div class="title">
@@ -31,6 +31,12 @@
         :dataset="{ borderWidth: 1 }"
       ></line-chart>
     </div>
+  </div>
+  <div v-else>
+    <loader-item
+      loading-msg="Fetching data from API"
+      illustration-color="#000"
+    ></loader-item>
   </div>
 </template>
 
