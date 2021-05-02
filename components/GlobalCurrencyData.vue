@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div v-if="globalMarketData.isLoading">Loading...</div>
+    <div v-if="globalMarketData.isLoading"></div>
     <div v-else class="global-market">
       <div v-if="globalMarketData.data.total_volume" class="global-market-item">
         <p class="title">TOTAL MARKET VOLUME</p>
