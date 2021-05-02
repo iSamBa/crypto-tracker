@@ -40,8 +40,8 @@ import { mapState, mapActions } from 'vuex'
 export default {
   computed: { ...mapState(['coins']) },
   mounted() {
-    this.getCoins()
+    this.fetchCoins()
   },
-  methods: { ...mapActions(['getCoins', 'getCoinPrices']) },
+  methods: { ...mapActions(['fetchCoins']) },
 }
 </script>
