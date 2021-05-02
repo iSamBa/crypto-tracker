@@ -3,7 +3,7 @@
    padding: 0;
    box-sizing: border-box;
 }
-#__nuxt  {
+#__nuxt, html  {
    background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, #C4C4C4 100%), #FFFFFF;
    min-height: 100vh;
    max-width: 100vw;
@@ -11,6 +11,7 @@
 
 .main {
    font-family: $font-base;
+   min-height: 100%;
 }
 .box-inner {
    margin-inline: $horizontal-spacer * 1.5;
