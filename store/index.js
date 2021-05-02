@@ -79,7 +79,7 @@ export const mutations = {
    * @param {*} payload
    * @author iSamBa
    */
-  ADD_COINS(state, payload) {
+  UPDATE_COINS(state, payload) {
     state.coins.data = payload
   },
 
