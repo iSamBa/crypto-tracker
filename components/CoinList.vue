@@ -1,5 +1,11 @@
 <template>
-  <div v-if="coins.data" class="coin-row">
+  <div v-if="coins.isLoading">
+    <loader-item
+      loading-msg="Fetching data from API"
+      illustration-color="#000"
+    ></loader-item>
+  </div>
+  <div v-else class="coin-row">
     <nuxt-link
       v-for="coin in coins.data"
       :key="coin.id"
@@ -32,12 +38,6 @@
         </p>
       </div>
     </nuxt-link>
-  </div>
-  <div v-else>
-    <loader-item
-      loading-msg="Fetching data from API"
-      illustration-color="#000"
-    ></loader-item>
   </div>
 </template>
 

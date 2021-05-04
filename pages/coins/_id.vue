@@ -16,8 +16,8 @@
       class="description"
       v-html="coin.description.id"
     ></p>
-    <div class="graph">
-      <!-- TODO : Insert the graph here using vue-chartjs -->
+    <div v-if="prices" class="graph">
+      <price-chart :prices="prices" :fill="true"></price-chart>
     </div>
   </div>
   <div v-else>
