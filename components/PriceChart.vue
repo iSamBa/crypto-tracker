@@ -30,6 +30,16 @@ export default {
       required: false,
       default: 'Price',
     },
+    displayXGrid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    displayYGrid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
@@ -37,6 +47,11 @@ export default {
       data: [],
       datacollection: {},
       options: {
+        elements: {
+          point: {
+            radius: 0,
+          },
+        },
         animation: {
           easing: 'easeInOutBack',
         },
@@ -49,12 +64,12 @@ export default {
               ticks: {
                 beginAtZero: true,
                 callback: (value, index, values) => {
-                  return ''
+                  return this.displayYGrid ? value : ''
                 },
               },
               gridLines: {
-                display: false,
-                drawBorder: false,
+                display: this.displayYGrid,
+                drawBorder: this.displayYGrid,
               },
             },
           ],
@@ -63,12 +78,12 @@ export default {
               ticks: {
                 beginAtZero: true,
                 callback: (value, index, values) => {
-                  return ''
+                  return this.displayXGrid ? value : ''
                 },
               },
               gridLines: {
-                display: false,
-                drawBorder: false,
+                display: this.displayXGrid,
+                drawBorder: this.displayXGrid,
               },
             },
           ],
@@ -95,6 +110,7 @@ export default {
         datasets: [
           {
             fill: this.fill,
+            borderColor: 'rgba(250, 174, 50,.7)',
             backgroundColor: gradient,
             data: this.data,
           },
@@ -105,4 +121,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.chart {
+  height: min(900px, 60%);
+}
+</style>

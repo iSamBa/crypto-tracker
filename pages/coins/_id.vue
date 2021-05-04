@@ -16,8 +16,12 @@
       class="description"
       v-html="coin.description.id"
     ></p>
-    <div v-if="prices" class="graph">
-      <price-chart :prices="prices" :fill="true"></price-chart>
+    <div v-if="prices.lenth > 0">
+      <price-chart
+        :prices="prices"
+        :fill="true"
+        :display-y-grid="true"
+      ></price-chart>
     </div>
   </div>
   <div v-else>
