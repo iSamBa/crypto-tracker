@@ -16,9 +16,9 @@
       class="description"
       v-html="coin.description.id"
     ></p>
-    <div v-if="prices.lenth > 0">
+    <div v-if="coinPrices[0]">
       <price-chart
-        :prices="prices"
+        :prices="coinPrices"
         :fill="true"
         :display-y-grid="true"
       ></price-chart>
@@ -40,6 +40,11 @@ export default {
       coin: '',
       prices: [],
     }
+  },
+  computed: {
+    coinPrices() {
+      return this.prices
+    },
   },
   async mounted() {
     const coinId = this.$route.params.id
