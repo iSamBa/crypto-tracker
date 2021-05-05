@@ -124,7 +124,11 @@ export default {
         datasets: [
           {
             fill: this.fill,
+<<<<<<< HEAD
             borderColor: '#414853',
+=======
+            borderColor: 'rgba(250, 174, 50,.7)',
+>>>>>>> 3b58129e1797d0627f9f4cb1420a36602b43b058
             backgroundColor: gradient,
             data: this.data,
           },
@@ -135,4 +139,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.chart {
+  height: min(900px, 60%);
+}
+</style>

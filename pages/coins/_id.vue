@@ -16,12 +16,20 @@
       class="description"
       v-html="coin.description.id"
     ></p>
+<<<<<<< HEAD
     <div v-if="prices" class="graph">
       <price-chart
         :coin-id="coin.id"
         :prices="prices"
         :duration="2000"
         :fill="true"
+=======
+    <div v-if="coinPrices[0]">
+      <price-chart
+        :prices="coinPrices"
+        :fill="true"
+        :display-y-grid="true"
+>>>>>>> 3b58129e1797d0627f9f4cb1420a36602b43b058
       ></price-chart>
     </div>
   </div>
@@ -41,6 +49,11 @@ export default {
       coin: '',
       prices: [],
     }
+  },
+  computed: {
+    coinPrices() {
+      return this.prices
+    },
   },
   async mounted() {
     const coinId = this.$route.params.id
