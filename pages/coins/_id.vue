@@ -17,7 +17,12 @@
       v-html="coin.description.id"
     ></p>
     <div v-if="prices" class="graph">
-      <price-chart :prices="prices" :fill="true"></price-chart>
+      <price-chart
+        :coin-id="coin.id"
+        :prices="prices"
+        :duration="2000"
+        :fill="true"
+      ></price-chart>
     </div>
   </div>
   <div v-else>
@@ -40,13 +45,8 @@ export default {
   async mounted() {
     const coinId = this.$route.params.id
     this.coin = await this.fetchCoinById(coinId)
-    this.prices = await this.fetchCoinPrices({
-      id: coinId,
-      currency: 'eur',
-      duration: 4000,
-    })
   },
-  methods: { ...mapActions(['fetchCoinById', 'fetchCoinPrices']) },
+  methods: { ...mapActions(['fetchCoinById']) },
 }
 </script>
 

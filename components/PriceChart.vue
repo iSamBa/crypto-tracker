@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import LineChart from './LineChart.js'
 
 export default {
@@ -16,9 +17,14 @@ export default {
     LineChart,
   },
   props: {
-    prices: {
-      type: Array,
+    coinId: {
+      type: String,
       required: true,
+    },
+    duration: {
+      type: Number,
+      required: false,
+      default: 1,
     },
     fill: {
       type: Boolean,
@@ -30,13 +36,29 @@ export default {
       required: false,
       default: 'Price',
     },
+    displayXGrid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+    displayYGrid: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data() {
     return {
       labels: [],
       data: [],
+      prices: [],
       datacollection: {},
       options: {
+        elements: {
+          point: {
+            radius: 0,
+          },
+        },
         animation: {
           easing: 'easeInOutBack',
         },
@@ -49,12 +71,12 @@ export default {
               ticks: {
                 beginAtZero: true,
                 callback: (value, index, values) => {
-                  return ''
+                  return this.displayYGrid ? value : ''
                 },
               },
               gridLines: {
-                display: false,
-                drawBorder: false,
+                display: this.displayYGrid,
+                drawBorder: this.displayYGrid,
               },
             },
           ],
@@ -63,12 +85,12 @@ export default {
               ticks: {
                 beginAtZero: true,
                 callback: (value, index, values) => {
-                  return ''
+                  return this.displayXGrid ? value : ''
                 },
               },
               gridLines: {
-                display: false,
-                drawBorder: false,
+                display: this.displayXGrid,
+                drawBorder: this.displayXGrid,
               },
             },
           ],
@@ -76,7 +98,12 @@ export default {
       },
     }
   },
-  mounted() {
+  async mounted() {
+    this.prices = await this.fetchCoinPrices({
+      id: this.coinId,
+      currency: 'eur',
+      duration: this.duration,
+    })
     this.fillData()
     this.prices.forEach((price) => {
       this.labels.push(price.x)
@@ -84,17 +111,20 @@ export default {
     })
   },
   methods: {
+    ...mapActions(['fetchCoinPrices']),
     fillData() {
       const ctx = this.$refs.myChart.$refs.canvas.getContext('2d')
-      const gradient = ctx.createLinearGradient(0, 0, 0, 700)
-      gradient.addColorStop(0, 'rgba(250,174,50,1)')
-      gradient.addColorStop(1, 'rgba(250,174,50,.1)')
+      const gradient = ctx.createLinearGradient(0, 0, 0, 500)
+      ctx.height = 400
+      gradient.addColorStop(0, 'rgba(65,72,83,1)')
+      gradient.addColorStop(1, 'rgba(65,72,83,.1)')
 
       this.datacollection = {
         labels: this.labels,
         datasets: [
           {
             fill: this.fill,
+            borderColor: '#414853',
             backgroundColor: gradient,
             data: this.data,
           },
