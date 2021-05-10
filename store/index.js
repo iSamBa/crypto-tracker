@@ -7,6 +7,9 @@ export const state = () => ({
     isLoading: false,
     data: {},
   },
+  lastDayPrices: {
+    data: [],
+  },
 })
 
 // getters
@@ -65,7 +68,7 @@ export const actions = {
       `/coins/${params.id}/market_chart?vs_currency=${params.currency}&days=${params.duration}`
     )
     const formattedPrices = prices.data.prices.map((dataset) => {
-      return [new Date(dataset[0]), dataset[1]]
+      return { x: new Date(dataset[0]), y: dataset[1] }
     })
     return formattedPrices
   },

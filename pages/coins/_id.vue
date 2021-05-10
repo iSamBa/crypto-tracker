@@ -16,20 +16,13 @@
       class="description"
       v-html="coin.description.id"
     ></p>
-    <div class="graph">
-      <line-chart
-        :data="prices"
-        :points="false"
-        prefix="€"
-        thousands=","
-        decimal="."
-        loading="Fetching data from the API ..."
-        empty="No available data"
-        :label="coin.name"
-        :round="4"
-        :zeros="true"
-        :dataset="{ borderWidth: 1 }"
-      ></line-chart>
+    <div v-if="prices" class="graph">
+      <price-chart
+        :coin-id="coin.id"
+        :prices="prices"
+        :duration="2000"
+        :fill="true"
+      ></price-chart>
     </div>
   </div>
   <div v-else>
@@ -49,16 +42,16 @@ export default {
       prices: [],
     }
   },
+  computed: {
+    coinPrices() {
+      return this.prices
+    },
+  },
   async mounted() {
     const coinId = this.$route.params.id
     this.coin = await this.fetchCoinById(coinId)
-    this.prices = await this.fetchCoinPrices({
-      id: coinId,
-      currency: 'eur',
-      duration: 4000,
-    })
   },
-  methods: { ...mapActions(['fetchCoinById', 'fetchCoinPrices']) },
+  methods: { ...mapActions(['fetchCoinById']) },
 }
 </script>
 

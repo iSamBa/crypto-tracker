@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <global-currency-data></global-currency-data>
-  </div>
+  <global-currency-data></global-currency-data>
 </template>
 
 <script>
