@@ -54,8 +54,6 @@ export default {
       prices: [],
       datacollection: {},
       options: {
-        responsive: false,
-        height: 600,
         elements: {
           point: {
             radius: 0,
